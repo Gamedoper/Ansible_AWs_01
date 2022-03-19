@@ -56,3 +56,36 @@
         resource_tags:
           Name: orange-pubsub3
       register: pubsub3_out
+
+    - name: create private subntet 3 in zone3
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ zone }}"
+        az: "{{zone3}}"
+        state: "{{state}}"
+        cidr: "{{PriSub1Cidr}}"
+        resource_tags:
+          Name: orange-pubsub3
+      register: privsub3_out
+
+    - name: create private subntet 3 in zone3
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ zone }}"
+        az: "{{zone3}}"
+        state: "{{state}}"
+        cidr: "{{PriSub2Cidr}}"
+        resource_tags:
+          Name: orange-privsub3
+      register: privsub3_out
+
+    - name: create private subntet 3 in zone3
+      ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{ zone }}"
+        az: "{{zone3}}"
+        state: "{{state}}"
+        cidr: "{{PriSub3Cidr}}"
+        resource_tags:
+          Name: orange-privsub3
+      register: privsub3_out
