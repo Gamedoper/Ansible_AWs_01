@@ -1,0 +1,5 @@
+bastion_ami: ami-something 
+region: us-east-2
+MYIP: 000.00.00.00/12
+
+
